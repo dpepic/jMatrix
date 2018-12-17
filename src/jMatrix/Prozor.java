@@ -8,7 +8,6 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
-import java.util.Stack;
 import java.util.Vector;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
@@ -16,14 +15,9 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Dimension;
-
 import javax.swing.JScrollPane;
 import javax.swing.JPanel;
-import java.awt.GridLayout;
 import java.awt.Insets;
-import java.awt.LayoutManager;
-import javax.swing.BoxLayout;
 
 public class Prozor {
 
@@ -49,8 +43,6 @@ public class Prozor {
 	Vector<Integer> v = new Vector<Integer>();
 	Vector<Integer> v1 = new Vector<Integer>();
 	Vector<Integer> rez = new Vector<Integer>(); //Volim stack mnogo, ali ovde mi je nezgodan kako sam resio :(
-
-
 
 	/**
 	 * Launch the application.
@@ -134,7 +126,6 @@ public class Prozor {
 
 		scrollPane.setViewportView(panel); //U njega postavljamo panel
 
-
 		btnIzracunaj.setEnabled(false);
 		btnIzracunaj.addActionListener(new ActionListener() 
 		{
@@ -150,7 +141,6 @@ public class Prozor {
 					}
 				}
 
-
 				int[][] matB = new int[brRedB][brKolB];
 				for(int i = 0; i < brRedB; i++) 
 				{
@@ -159,7 +149,6 @@ public class Prozor {
 						matB[i][j] = v1.elementAt(j + brKolB * i);
 					}
 				}
-
 
 				int[][] matAxB = new int[brRedA][brKolB];
 				for(int i = 0; i < brRedA; i++) 
@@ -186,9 +175,9 @@ public class Prozor {
 				btnIzracunaj.setEnabled(false);
 			}
 		});
+		
 		btnIzracunaj.setBounds(127, 241, 132, 35);
 		frmJmatrix.getContentPane().add(btnIzracunaj);
-
 
 		btnPotvrdiB.addActionListener(new ActionListener() 
 		{
@@ -202,10 +191,10 @@ public class Prozor {
 				}
 			}
 		});
+		
 		btnPotvrdiB.setEnabled(false);
 		btnPotvrdiB.setBounds(199, 182, 99, 23);
 		frmJmatrix.getContentPane().add(btnPotvrdiB);
-
 
 		btnUnosB.setEnabled(false);
 		btnUnosB.addActionListener(new ActionListener() 
@@ -229,9 +218,9 @@ public class Prozor {
 				}
 			}
 		});
+		
 		btnUnosB.setBounds(196, 135, 102, 23);
 		frmJmatrix.getContentPane().add(btnUnosB);
-
 
 		btnPotvrdiA.setEnabled(false);
 		btnPotvrdiA.addActionListener(new ActionListener() 
@@ -249,6 +238,7 @@ public class Prozor {
 				}
 			}
 		});
+		
 		btnPotvrdiA.setBounds(90, 182, 99, 23);
 		frmJmatrix.getContentPane().add(btnPotvrdiA);
 
@@ -278,6 +268,7 @@ public class Prozor {
 				}
 			}
 		});
+		
 		btnUnosA.setBounds(90, 135, 99, 23);
 		frmJmatrix.getContentPane().add(btnUnosA);
 
